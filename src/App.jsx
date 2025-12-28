@@ -12,7 +12,6 @@ const paragraphVariants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.55 } },
 };
 
-// Scroll suave unificado (no repitas 3 funciones para lo mismo)
 function scrollToId(id) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -47,12 +46,12 @@ export default function App() {
 
         <div className="mt-4">
           <a
-            href="/cv.pdf"
+            href="cv.pdf"
             download
             className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-6 py-2 rounded-full shadow-md transition-transform hover:scale-105 text-sm font-semibold flex items-center gap-2"
           >
             Descargar CV
-            <img src="/logos/download.svg" alt="Descargar" className="h-4 w-4" />
+            <img src="logos/download.svg" alt="Descargar" className="h-4 w-4" />
           </a>
         </div>
       </section>
@@ -74,42 +73,56 @@ export default function App() {
             viewport={{ once: true }}
           >
             <motion.p className="mb-4" variants={paragraphVariants}>
-  Soy{" "}
-  <span className="font-semibold text-neutral-100">Lautaro Bastari</span>,{" "}
-  <span className="animate-soft-orange font-semibold">Analista en Sistemas</span> y{" "}
-  <span className="animate-soft-orange font-semibold">
-    estudiante de 5° año de la Licenciatura en Sistemas
-  </span>{" "}
-  (UNNOBA). Me desempeño como{" "}
-  <span className="font-semibold text-neutral-100">Fullstack Developer</span>{" "}
-  con perfil{" "}
-  <span className="font-semibold text-neutral-100">backend</span>.
-</motion.p>
+              Soy{" "}
+              <span className="font-semibold text-neutral-100">
+                Lautaro Bastari
+              </span>
+              ,{" "}
+              <span className="animate-soft-orange font-semibold">
+                Analista en Sistemas
+              </span>{" "}
+              y{" "}
+              <span className="animate-soft-orange font-semibold">
+                estudiante de 5° año de la Licenciatura en Sistemas
+              </span>{" "}
+              (UNNOBA). Me desempeño como{" "}
+              <span className="font-semibold text-neutral-100">
+                Fullstack Developer
+              </span>{" "}
+              con perfil{" "}
+              <span className="font-semibold text-neutral-100">backend</span>.
+            </motion.p>
 
-<motion.p className="mb-4" variants={paragraphVariants}>
-  En backend desarrollo aplicaciones con{" "}
-  <span className="font-semibold text-neutral-100">
-    lógica de negocio, roles y validaciones
-  </span>
-  , y persisto datos con{" "}
-  <span className="font-semibold text-neutral-100">SQL (SQLite)</span>{" "}
-  priorizando{" "}
-  <span className="font-semibold text-neutral-100">integridad</span> y{" "}
-  <span className="font-semibold text-neutral-100">consultas eficientes</span>.
-</motion.p>
+            <motion.p className="mb-4" variants={paragraphVariants}>
+              En backend desarrollo aplicaciones con{" "}
+              <span className="font-semibold text-neutral-100">
+                lógica de negocio, roles y validaciones
+              </span>
+              , y persisto datos con{" "}
+              <span className="font-semibold text-neutral-100">SQL (SQLite)</span>{" "}
+              priorizando{" "}
+              <span className="font-semibold text-neutral-100">integridad</span> y{" "}
+              <span className="font-semibold text-neutral-100">
+                consultas eficientes
+              </span>
+              .
+            </motion.p>
 
-<motion.p variants={paragraphVariants}>
-  En frontend construyo interfaces con{" "}
-  <span className="font-semibold text-neutral-100">React + TypeScript</span>{" "}
-  orientadas a sistemas de gestión. Trabajo en{" "}
-  <span className="font-semibold text-neutral-100">Linux</span> y utilizo{" "}
-  <span className="font-semibold text-neutral-100">Docker</span> como entorno de
-  desarrollo, con foco en{" "}
-  <span className="font-semibold text-neutral-100">
-    mantenibilidad, consistencia y trazabilidad
-  </span>
-  .
-</motion.p>
+            <motion.p variants={paragraphVariants}>
+              En frontend construyo interfaces con{" "}
+              <span className="font-semibold text-neutral-100">
+                React + TypeScript
+              </span>{" "}
+              orientadas a sistemas de gestión. Trabajo en{" "}
+              <span className="font-semibold text-neutral-100">Linux</span> y
+              utilizo{" "}
+              <span className="font-semibold text-neutral-100">Docker</span> como
+              entorno de desarrollo, con foco en{" "}
+              <span className="font-semibold text-neutral-100">
+                mantenibilidad, consistencia y trazabilidad
+              </span>
+              .
+            </motion.p>
           </motion.div>
 
           {/* Tecnologías + Redes */}
@@ -128,72 +141,70 @@ export default function App() {
 
               <div className="grid grid-cols-3 gap-6 place-items-center">
                 <img
-                  src="/logos/python.svg"
+                  src="logos/python.svg"
                   alt="Python"
                   title="Python"
                   className="h-10 drop-shadow-lg brightness-125 saturate-150"
                 />
                 <img
-                  src="/logos/php2.svg"
+                  src="logos/php2.svg"
                   alt="PHP"
                   title="PHP"
                   className="h-10 drop-shadow-lg brightness-125 saturate-150"
                 />
                 <img
-                  src="/logos/cpp.svg"
+                  src="logos/cpp.svg"
                   alt="C++"
                   title="C++"
                   className="h-10 drop-shadow-lg brightness-125 saturate-150"
                 />
 
                 <img
-                  src="/logos/javascript.svg"
+                  src="logos/javascript.svg"
                   alt="JavaScript"
                   title="JavaScript"
                   className="h-10 drop-shadow-lg brightness-125 saturate-150"
                 />
-                {/* NUEVO */}
                 <img
-                  src="/logos/ts.svg"
+                  src="logos/ts.svg"
                   alt="TypeScript"
                   title="TypeScript"
                   className="h-10 drop-shadow-lg brightness-125 saturate-150"
                 />
                 <img
-                  src="/logos/react.svg"
+                  src="logos/react.svg"
                   alt="React"
                   title="React"
                   className="h-10 drop-shadow-lg brightness-125 saturate-150"
                 />
 
                 <img
-                  src="/logos/java.svg"
+                  src="logos/java.svg"
                   alt="Java"
                   title="Java"
                   className="h-10 drop-shadow-lg brightness-125 saturate-150"
                 />
-                {/* NUEVO */}
                 <img
-                  src="/logos/rust.svg"
+                  src="logos/rust.svg"
                   alt="Rust"
                   title="Rust"
                   className="h-10 drop-shadow-lg brightness-125 saturate-150"
                 />
                 <img
-                  src="/logos/sql.svg"
+                  src="logos/sql.svg"
                   alt="SQL"
                   title="SQL"
                   className="h-10 drop-shadow-lg brightness-125 saturate-150"
                 />
 
                 <img
-                  src="/logos/docker.svg"
+                  src="logos/docker.svg"
                   alt="Docker"
                   title="Docker"
                   className="h-10 drop-shadow-lg brightness-125 saturate-150"
                 />
                 <img
-                  src="/logos/ubuntu.svg"
+                  src="logos/ubuntu.svg"
                   alt="Ubuntu"
                   title="Ubuntu"
                   className="h-10 drop-shadow-lg brightness-125 saturate-150"
@@ -201,7 +212,7 @@ export default function App() {
               </div>
             </motion.div>
 
-            {/* Redes */}
+            {/* Links */}
             <motion.div
               className="borde-animado-naranja sombra-glow text-white"
               initial={{ opacity: 0, y: 30 }}
@@ -214,7 +225,6 @@ export default function App() {
               </h3>
 
               <div className="grid grid-cols-2 gap-6 place-items-center">
-                {/* Acceso rápido a proyecto */}
                 <button
                   type="button"
                   title="Sistema contable (PHP)"
@@ -231,6 +241,7 @@ export default function App() {
                     transition={{ type: "spring", stiffness: 200 }}
                   />
                 </button>
+
                 <button
                   type="button"
                   title="Sistema de gestión (Rust)"
@@ -238,7 +249,7 @@ export default function App() {
                   className="cursor-pointer"
                 >
                   <motion.img
-                    src="/logos/rust-dark.svg"
+                    src="logos/rust-dark.svg"
                     alt="Rust"
                     className="h-10"
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -248,6 +259,7 @@ export default function App() {
                     transition={{ type: "spring", stiffness: 200 }}
                   />
                 </button>
+
                 <a
                   href="https://github.com/LautaroBastari"
                   title="GitHub"
@@ -255,7 +267,7 @@ export default function App() {
                   rel="noopener noreferrer"
                 >
                   <motion.img
-                    src="/logos/github.svg"
+                    src="logos/github.svg"
                     className="h-10"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -272,7 +284,7 @@ export default function App() {
                   rel="noopener noreferrer"
                 >
                   <motion.img
-                    src="/logos/linkedin.svg"
+                    src="logos/linkedin.svg"
                     className="h-10"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -320,156 +332,164 @@ export default function App() {
       <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-x">
         Proyectos
       </h2>
-          
+
       <section id="proyectos" className="py-12 px-6 grid md:grid-cols-2 gap-8">
+        {/* PROYECTO RUST */}
+        <div
+          id="proyecto-rust"
+          className="bg-[#1f1f1f] rounded-2xl shadow-md p-6 border border-yellow-400 hover:shadow-xl transition hover:-translate-y-1"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <img src="logos/rust.svg" alt="Rust Logo" className="h-8" />
+            <h2 className="text-2xl font-bold text-yellow-300">Proyecto Rust</h2>
+          </div>
 
-      {/* PROYECTO RUST */}
-      <div
-        id="proyecto-rust"
-        className="bg-[#1f1f1f] rounded-2xl shadow-md p-6 border border-yellow-400 hover:shadow-xl transition hover:-translate-y-1"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <img src="/logos/rust.svg" alt="Rust Logo" className="h-8" />
-          <h2 className="text-2xl font-bold text-yellow-300">Proyecto Rust</h2>
+          <p className="text-gray-300 text-base mb-6 leading-relaxed">
+            Sistema de gestión comercial desarrollado con{" "}
+            <span className="text-yellow-200 font-semibold">Rust</span> (Tauri) y{" "}
+            <span className="text-white font-semibold">React + TypeScript</span>.
+            Incluye ventas, stock, caja, reportes de rentabilidad y{" "}
+            <span className="text-white font-semibold">
+              trazabilidad completa
+            </span>{" "}
+            de operaciones mediante base de datos{" "}
+            <span className="text-white font-semibold">SQLite</span>, con login por
+            roles y auditoría interna.
+          </p>
+
+          <div className="flex space-x-3 mt-4">
+            <a
+              href="https://github.com/LautaroBastari/freelance-market-app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-5 py-2 rounded-lg transition"
+            >
+              Ver código
+            </a>
+            <a
+              href="https://drive.google.com/drive/folders/1ROyFuz2DuQomwt8iiL6bmKo52x8VZIuo?hl=es-419"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-800 text-yellow-300 border border-yellow-300 hover:bg-gray-700 font-semibold px-5 py-2 rounded-lg transition"
+            >
+              Ver documentación
+            </a>
+          </div>
         </div>
 
-        <p className="text-gray-300 text-base mb-6 leading-relaxed">
-          Sistema de gestión comercial desarrollado con{" "}
-          <span className="text-yellow-200 font-semibold">Rust</span> (Tauri) y{" "}
-          <span className="text-white font-semibold">React + TypeScript</span>.
-          Incluye ventas, stock, caja, reportes de rentabilidad y{" "}
-          <span className="text-white font-semibold">trazabilidad completa</span>{" "}
-          de operaciones mediante base de datos{" "}
-          <span className="text-white font-semibold">SQLite</span>, con login por roles
-          y auditoría interna.
-        </p>
+        {/* PROYECTO PHP */}
+        <div
+          id="proyecto-php"
+          className="bg-[#1f1f1f] rounded-2xl shadow-md p-6 border border-sky-500 hover:shadow-xl transition hover:-translate-y-1"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <img src="logos/php.svg" alt="PHP Logo" className="h-8" />
+            <h2 className="text-2xl font-bold text-sky-400">Proyecto PHP</h2>
+          </div>
 
-        <div className="flex space-x-3 mt-4">
-          <a
-            href="https://github.com/LautaroBastari/freelance-market-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-5 py-2 rounded-lg transition"
-          >
-            Ver código
-          </a>
-          <a
-            href="https://drive.google.com/drive/folders/1ROyFuz2DuQomwt8iiL6bmKo52x8VZIuo?hl=es-419"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gray-800 text-yellow-300 border border-yellow-300 hover:bg-gray-700 font-semibold px-5 py-2 rounded-lg transition"
-          >
-            Ver documentación
-          </a>
-        </div>
-      </div>
+          <p className="text-gray-300 text-base mb-6 leading-relaxed">
+            Sistema contable web en{" "}
+            <span className="text-sky-300 font-semibold">PHP</span> con generación
+            automática de asientos contables y reportes como{" "}
+            <span className="text-white font-semibold">Libro Diario</span> y{" "}
+            <span className="text-white font-semibold">Libro Mayor</span>. Incluye
+            roles, validaciones, ventas, stock y trazabilidad operativa.
+          </p>
 
-      {/* PROYECTO PHP */}
-      <div
-        id="proyecto-php"
-        className="bg-[#1f1f1f] rounded-2xl shadow-md p-6 border border-sky-500 hover:shadow-xl transition hover:-translate-y-1"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <img src="/logos/php.svg" alt="PHP Logo" className="h-8" />
-          <h2 className="text-2xl font-bold text-sky-400">Proyecto PHP</h2>
+          <div className="flex space-x-3 mt-4">
+            <a
+              href="https://github.com/LautaroBastari/sistema-contable-university"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-sky-600 hover:bg-sky-500 text-white font-semibold px-4 py-2 rounded"
+            >
+              Ver código
+            </a>
+            <a
+              href="https://drive.google.com/drive/folders/1ROyFuz2DuQomwt8iiL6bmKo52x8VZIuo?hl=es-419"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-800 text-sky-300 border border-sky-300 hover:bg-gray-700 font-semibold px-4 py-2 rounded"
+            >
+              Ver documentación
+            </a>
+          </div>
         </div>
 
-        <p className="text-gray-300 text-base mb-6 leading-relaxed">
-          Sistema contable web en{" "}
-          <span className="text-sky-300 font-semibold">PHP</span> con generación
-          automática de asientos contables y reportes como{" "}
-          <span className="text-white font-semibold">Libro Diario</span> y{" "}
-          <span className="text-white font-semibold">Libro Mayor</span>.
-          Incluye roles, validaciones, ventas, stock y trazabilidad operativa.
-        </p>
+        {/* PROYECTO JAVA */}
+        <div
+          id="proyecto-java"
+          className="bg-[#1f1f1f] rounded-2xl shadow-md p-6 border border-orange-500 hover:shadow-xl transition hover:-translate-y-1"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <img src="logos/java.svg" alt="Java Logo" className="h-8" />
+            <h2 className="text-2xl font-bold text-orange-400">Proyecto Java</h2>
+          </div>
 
-        <div className="flex space-x-3 mt-4">
-          <a
-            href="https://github.com/LautaroBastari/sistema-contable-university"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-sky-600 hover:bg-sky-500 text-white font-semibold px-4 py-2 rounded"
-          >
-            Ver código
-          </a>
-          <a
-            href="https://drive.google.com/drive/folders/1ROyFuz2DuQomwt8iiL6bmKo52x8VZIuo?hl=es-419"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gray-800 text-sky-300 border border-sky-300 hover:bg-gray-700 font-semibold px-4 py-2 rounded"
-          >
-            Ver documentación
-          </a>
-        </div>
-      </div>
+          <p className="text-gray-300 text-base mb-6 leading-relaxed">
+            Sistema de concursos desarrollado con{" "}
+            <span className="text-orange-300 font-semibold">
+              Java + Spring Boot
+            </span>
+            . Gestión de usuarios, carga de materiales, evaluación por roles y panel
+            administrador para resultados y ganadores.
+          </p>
 
-      {/* PROYECTO JAVA */}
-      <div
-        id="proyecto-java"
-        className="bg-[#1f1f1f] rounded-2xl shadow-md p-6 border border-orange-500 hover:shadow-xl transition hover:-translate-y-1"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <img src="/logos/java.svg" alt="Java Logo" className="h-8" />
-          <h2 className="text-2xl font-bold text-orange-400">Proyecto Java</h2>
+          <div className="flex space-x-3 mt-4">
+            <a
+              href="https://github.com/LautaroBastari/concurso-materiales-independently"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-orange-600 hover:bg-orange-500 text-white font-semibold px-5 py-2 rounded-lg transition"
+            >
+              Ver código
+            </a>
+            <button
+              disabled
+              className="bg-gray-900 text-gray-500 border border-gray-700 font-semibold px-5 py-2 rounded-lg cursor-not-allowed"
+            >
+              Documentación (próximamente)
+            </button>
+          </div>
         </div>
 
-        <p className="text-gray-300 text-base mb-6 leading-relaxed">
-          Sistema de concursos desarrollado con{" "}
-          <span className="text-orange-300 font-semibold">Java + Spring Boot</span>.
-          Gestión de usuarios, carga de materiales, evaluación por roles y
-          panel administrador para resultados y ganadores.
-        </p>
+        {/* PROYECTO JAVASCRIPT */}
+        <div
+          id="proyecto-javascript"
+          className="bg-[#1f1f1f] rounded-2xl shadow-md p-6 border border-yellow-300 hover:shadow-xl transition hover:-translate-y-1"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <img
+              src="logos/javascript.svg"
+              alt="JavaScript Logo"
+              className="h-8"
+            />
+            <h2 className="text-2xl font-bold text-yellow-300">
+              Proyecto JavaScript
+            </h2>
+          </div>
 
-        <div className="flex space-x-3 mt-4">
-          <a
-            href="https://github.com/LautaroBastari/concurso-materiales-independently"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-orange-600 hover:bg-orange-500 text-white font-semibold px-5 py-2 rounded-lg transition"
-          >
-            Ver código
-          </a>
-          <button
-            disabled
-            className="bg-gray-900 text-gray-500 border border-gray-700 font-semibold px-5 py-2 rounded-lg cursor-not-allowed"
-          >
-            Documentación (próximamente)
-          </button>
+          <p className="text-gray-300 text-base mb-6 leading-relaxed">
+            Asistente académico desarrollado en{" "}
+            <span className="text-yellow-200 font-semibold">JavaScript</span>,
+            integrado con{" "}
+            <span className="text-white font-semibold">Gemini AI</span>, con
+            respuestas restringidas al ámbito institucional (carreras, cursadas e
+            inscripciones), priorizando control y seguridad.
+          </p>
+
+          <div className="flex space-x-3 mt-4">
+            <a
+              href="https://github.com/LautaroBastari/chatbot-gemini"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-5 py-2 rounded-lg transition"
+            >
+              Ver código
+            </a>
+          </div>
         </div>
-      </div>
-
-      {/* PROYECTO JAVASCRIPT */}
-      <div
-        id="proyecto-javascript"
-        className="bg-[#1f1f1f] rounded-2xl shadow-md p-6 border border-yellow-300 hover:shadow-xl transition hover:-translate-y-1"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <img src="/logos/javascript.svg" alt="JavaScript Logo" className="h-8" />
-          <h2 className="text-2xl font-bold text-yellow-300">Proyecto JavaScript</h2>
-        </div>
-
-        <p className="text-gray-300 text-base mb-6 leading-relaxed">
-          Asistente académico desarrollado en{" "}
-          <span className="text-yellow-200 font-semibold">JavaScript</span>,
-          integrado con{" "}
-          <span className="text-white font-semibold">Gemini AI</span>,
-          con respuestas restringidas al ámbito institucional
-          (carreras, cursadas e inscripciones), priorizando control y seguridad.
-        </p>
-
-        <div className="flex space-x-3 mt-4">
-          <a
-            href="https://github.com/LautaroBastari/chatbot-gemini"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-5 py-2 rounded-lg transition"
-          >
-            Ver código
-          </a>
-        </div>
-      </div>
-
-    </section>
+      </section>
     </div>
   );
 }
