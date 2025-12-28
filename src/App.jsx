@@ -222,7 +222,7 @@ export default function App() {
                   className="cursor-pointer"
                 >
                   <motion.img
-                    src="/logos/php.svg"
+                    src="logos/php.svg"
                     className="h-10"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
