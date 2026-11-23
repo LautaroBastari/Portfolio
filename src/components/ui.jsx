@@ -1,18 +1,43 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
-/* Aparece suavemente al entrar en pantalla (respeta "reducir movimiento") */
-export function Reveal({ children, delay = 0, className = "" }) {
-  const reduce = useReducedMotion();
+const EASE = [0.22, 1, 0.36, 1]; // desaceleración suave
+
+/* Aparece suavemente al entrar en pantalla */
+export function Reveal({ children, delay = 0, className = "", as = "div" }) {
+  const M = motion[as];
   return (
-    <motion.div
+    <M
       className={className}
-      initial={reduce ? false : { opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay, ease: "easeOut" }}
+      initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.8, delay, ease: EASE }}
     >
       {children}
-    </motion.div>
+    </M>
+  );
+}
+
+/* Texto que aparece palabra por palabra (para títulos) */
+export function TextReveal({ text, as = "span", className = "", delay = 0, stagger = 0.06 }) {
+  const M = motion[as];
+  const words = text.split(" ");
+  return (
+    <M className={className} aria-label={text}>
+      {words.map((w, i) => (
+        <motion.span
+          key={`${w}-${i}`}
+          aria-hidden
+          className="inline-block whitespace-pre"
+          initial={{ opacity: 0, y: "0.4em", filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, delay: delay + i * stagger, ease: EASE }}
+        >
+          {w}
+          {i < words.length - 1 ? " " : ""}
+        </motion.span>
+      ))}
+    </M>
   );
 }
 

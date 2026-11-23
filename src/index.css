@@ -13,13 +13,12 @@
   --line: 39 39 42;
   --fg: 236 236 239;
   --muted: 150 150 160;
-  --accent: 45 212 191;
+  --accent: 245 177 76;
   color-scheme: dark;
 }
 
 @layer base {
   html {
-    scroll-behavior: smooth;
     font-size: 16px;
   }
   /* En monitores grandes todo (texto, espacios, anchos en rem) crece proporcionalmente */
@@ -79,19 +78,12 @@
   .icon-link {
     @apply rounded-md p-2 text-muted transition-colors hover:text-accent;
   }
+  /* Tarjeta de la grilla bento */
+  .bento {
+    @apply overflow-hidden rounded-3xl border border-line bg-surface transition-[border-color,transform] duration-500 ease-out hover:border-muted/40;
+  }
   .card {
     @apply rounded-xl border border-line bg-surface transition-colors hover:border-muted/50;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}

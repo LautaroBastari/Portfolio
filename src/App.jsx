@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { content } from "./content";
 import Navbar from "./components/Navbar";
-import DevColorPicker from "./components/DevColorPicker";
-import Projects from "./components/Projects";
-import { About, Contact, Experience, Footer, Hero, Stack } from "./components/Sections";
+import Bento from "./components/Bento";
+import { Footer, Hero } from "./components/Sections";
 
 function initialLang() {
   try {
@@ -34,16 +33,11 @@ export default function App() {
         {lang === "es" ? "Ir a proyectos" : "Skip to projects"}
       </a>
       <Navbar t={t} lang={lang} setLang={setLang} />
-      <main>
+      <div key={lang}>
         <Hero t={t} />
-        <Experience t={t} />
-        <Projects t={t} lang={lang} />
-        <About t={t} />
-        <Stack t={t} />
-        <Contact t={t} />
-      </main>
+        <Bento t={t} lang={lang} />
+      </div>
       <Footer t={t} />
-      {import.meta.env.DEV && <DevColorPicker />}
     </>
   );
 }

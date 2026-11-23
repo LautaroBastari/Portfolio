@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { links } from "../content";
-import { Icon, Reveal, Section, Tags } from "./ui";
+import { Icon, Reveal, Section, Tags, TextReveal } from "./ui";
 
 export function Hero({ t }) {
   return (
@@ -18,26 +18,25 @@ export function Hero({ t }) {
             {t.hero.available}
           </p>
         </Reveal>
-        <Reveal delay={0.05}>
-          <p className="mt-8 font-mono text-base text-accent">{t.hero.kicker}</p>
-          <h1 className="mt-2 text-5xl font-semibold tracking-tight text-fg sm:text-6xl xl:text-7xl">{t.hero.name}</h1>
-        </Reveal>
+        {/* El texto aparece palabra por palabra al entrar */}
+        <TextReveal as="p" text={t.hero.kicker} className="mt-8 block font-mono text-base text-accent" delay={0.15} />
+        <TextReveal as="h1" text={t.hero.name} className="mt-2 block text-5xl font-semibold tracking-tight text-fg sm:text-6xl xl:text-7xl" delay={0.3} stagger={0.14} />
         {/* Títulos: lo primero que se lee después del nombre */}
-        <Reveal delay={0.08}>
-          <ul className="mt-6 space-y-2">
-            {t.hero.degrees.map((d) => (
-              <li key={d} className="flex items-start gap-3 text-xl font-medium text-fg sm:text-2xl">
+        <ul className="mt-6 space-y-2">
+          {t.hero.degrees.map((d, i) => (
+            <li key={d} className="flex items-start gap-3 text-xl font-medium text-fg sm:text-2xl">
+              <Reveal delay={0.6 + i * 0.2}>
                 <Icon.cap width={24} height={24} className="mt-1 shrink-0 text-accent" />
-                {d}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-5 text-lg text-fg/75 sm:text-xl">{t.hero.role}</p>
-        </Reveal>
-        <Reveal delay={0.12}>
+              </Reveal>
+              <TextReveal text={d} delay={0.65 + i * 0.2} stagger={0.05} />
+            </li>
+          ))}
+        </ul>
+        <TextReveal as="p" text={t.hero.role} className="mt-5 block text-lg text-fg/75 sm:text-xl" delay={1.1} stagger={0.05} />
+        <Reveal delay={1.4}>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">{t.hero.summary}</p>
         </Reveal>
-        <Reveal delay={0.15}>
+        <Reveal delay={1.6}>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <a href="#proyectos" className="btn-primary">
               {t.hero.ctaProjects}
@@ -62,7 +61,7 @@ export function Hero({ t }) {
         </div>
 
         {/* Foto: arriba del texto en celular, a la derecha en escritorio */}
-        <Reveal delay={0.1} className="order-first lg:order-none">
+        <Reveal delay={0.4} className="order-first lg:order-none">
           <div className="relative mx-auto w-32 sm:w-40 lg:w-60 xl:w-64">
             <div className="absolute -inset-3 -z-10 rounded-[2rem] bg-accent/10 blur-2xl" aria-hidden />
             <img

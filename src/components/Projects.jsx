@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Icon, Reveal, Section, Tags } from "./ui";
 
 /* ---------- Visor de imagen a pantalla completa ---------- */
-function Lightbox({ shot, onClose }) {
+export function Lightbox({ shot, onClose }) {
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && onClose();
     document.addEventListener("keydown", onKey);
@@ -43,7 +43,7 @@ function Frame({ children }) {
   );
 }
 
-function Gallery({ shots }) {
+export function Gallery({ shots }) {
   const [i, setI] = useState(0);
   const [zoom, setZoom] = useState(null);
   const current = shots[i];
@@ -90,7 +90,7 @@ function Node({ title, sub, accent = false }) {
 
 const Down = () => <div className="mx-auto h-5 w-px bg-muted/50" aria-hidden />;
 
-function ArchDiagram({ lang }) {
+export function ArchDiagram({ lang }) {
   const es = lang === "es";
   return (
     <Frame>
