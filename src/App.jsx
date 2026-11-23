@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ReactTypingEffect from "react-typing-effect";
 import "./index.css";
@@ -19,6 +20,20 @@ function scrollToId(id) {
 }
 
 export default function App() {
+  // Oculta el indicador "Deslizá..." cuando la sección de proyectos ya está a la vista
+  const [proyectosVisibles, setProyectosVisibles] = useState(false);
+
+  useEffect(() => {
+    const el = document.getElementById("proyectos");
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setProyectosVisibles(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="font-montserrat scroll-smooth">
       {/* HERO */}
@@ -47,7 +62,7 @@ export default function App() {
         <div className="mt-4">
           <a
             href="cv.pdf"
-            download
+            download="CV Lautaro Bastari.pdf"
             className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-6 py-2 rounded-full shadow-md transition-transform hover:scale-105 text-sm font-semibold flex items-center gap-2"
           >
             Descargar CV
@@ -233,6 +248,7 @@ export default function App() {
                 >
                   <motion.img
                     src="logos/php.svg"
+                    alt="PHP"
                     className="h-10"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -245,7 +261,7 @@ export default function App() {
                 <button
                   type="button"
                   title="Sistema de gestión (Rust)"
-                  onClick={() => scrollToId("proyecto-php")}
+                  onClick={() => scrollToId("proyecto-rust")}
                   className="cursor-pointer"
                 >
                   <motion.img
@@ -268,6 +284,7 @@ export default function App() {
                 >
                   <motion.img
                     src="logos/github.svg"
+                    alt="GitHub"
                     className="h-10"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -278,13 +295,14 @@ export default function App() {
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/in/tuusuario/"
+                  href="https://www.linkedin.com/in/lautarobastari/"
                   title="LinkedIn"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <motion.img
                     src="logos/linkedin.svg"
+                    alt="LinkedIn"
                     className="h-10"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -299,7 +317,12 @@ export default function App() {
         </div>
 
         {/* Indicador scroll a proyectos */}
-        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 text-center">
+        <div
+          className={`fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 text-center transition-opacity duration-500 ${
+            proyectosVisibles ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}
+          aria-hidden={proyectosVisibles}
+        >
           <p className="text-sm text-cyan-100 animate-pulse mb-1">
             Deslizá para ver mis proyectos
           </p>

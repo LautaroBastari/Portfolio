@@ -9,7 +9,7 @@
 .fondo-animado {
   background: linear-gradient(-45deg, #2b2b2b, #1f1f1f, #2b2b2b);
   background-size: 400% 400%;
-  animation: movimientoFondo 10s ease infinite;
+  animation: fondoOndulante 10s ease infinite;
 }
 
 @keyframes flotar {
@@ -52,10 +52,6 @@ body {
   background-attachment: fixed;
 }
 
-.text-white-glow {
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-}
-
 .hover-brillo {
   transition: filter 0.3s ease;
 }
@@ -87,19 +83,15 @@ html {
   animation: gradientShift 6s ease infinite;
 }
 
-@keyframes soft-blue-pulse {
-  0%, 100% {
-    color: #1f3b68; /* Azul mecánico oscuro */
-  }
-  50% {
-    color: #3a5b91; /* Azul apenas más claro */
-  }
+/* Gradiente que se desplaza horizontalmente (títulos con bg-clip-text) */
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
-.animate-soft-blue {
-  animation: soft-blue-pulse 3s ease-in-out infinite;
+.animate-gradient-x {
+  animation: gradient-x 4s ease infinite;
 }
-
 
 @keyframes soft-blue-pulse {
   0%, 100% {
@@ -135,7 +127,7 @@ html {
 
 .text-white-glow {
   color: white;
-  text-shadow: 0 0 px #ccc, 0 0 12px #999;
+  text-shadow: 0 0 5px #aaa, 0 0 10px #999;
   animation: glow 3s ease-in-out infinite;
 }
 
