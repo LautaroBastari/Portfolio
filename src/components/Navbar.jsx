@@ -39,8 +39,8 @@ export default function Navbar({ t, lang, setLang }) {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
-        scrolled || open ? "border-b border-line bg-bg/80 backdrop-blur-md" : "border-b border-transparent"
+      className={`fixed inset-x-0 top-0 z-40 border-b border-fg/15 transition-colors duration-300 ${
+        scrolled || open ? "bg-bg/85 backdrop-blur-md" : "bg-bg/60"
       }`}
     >
       <nav className="container-page flex h-16 items-center justify-between">

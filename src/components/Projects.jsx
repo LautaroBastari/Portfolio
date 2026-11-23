@@ -52,7 +52,7 @@ export function Gallery({ shots }) {
     <div>
       <Frame>
         <button type="button" onClick={() => setZoom(current)} className="block w-full cursor-zoom-in" aria-label={`Ampliar: ${current.alt}`}>
-          <img src={current.src} alt={current.alt} className="aspect-[16/9] w-full object-cover object-top" loading="lazy" />
+          <img src={current.src} alt={current.alt} className="ink aspect-[16/9] w-full object-cover object-top" loading="lazy" />
         </button>
       </Frame>
       {shots.length > 1 && (
@@ -68,7 +68,7 @@ export function Gallery({ shots }) {
                 idx === i ? "border-accent" : "border-line opacity-60 hover:opacity-100"
               }`}
             >
-              <img src={s.src} alt="" className="aspect-[16/9] w-full object-cover object-top" loading="lazy" />
+              <img src={s.src} alt="" className="ink aspect-[16/9] w-full object-cover object-top" loading="lazy" />
             </button>
           ))}
         </div>

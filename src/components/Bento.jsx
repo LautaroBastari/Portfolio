@@ -106,7 +106,7 @@ function SmallProject({ p, t }) {
     <div className="flex h-full flex-col">
       {p.shots && (
         <button type="button" onClick={() => setZoom(p.shots[0])} className="block cursor-zoom-in overflow-hidden border-b border-line" aria-label={p.shots[0].alt}>
-          <img src={p.shots[0].src} alt={p.shots[0].alt} className="aspect-[16/7] w-full object-cover object-top transition duration-700 hover:scale-[1.03]" loading="lazy" />
+          <img src={p.shots[0].src} alt={p.shots[0].alt} className="ink aspect-[16/7] w-full object-cover object-top" loading="lazy" />
         </button>
       )}
       <div className="flex flex-1 flex-col p-8 sm:p-10">
@@ -235,15 +235,15 @@ export default function Bento({ t, lang }) {
 
       <Group id="proyectos" title={t.projects.title}>
         <div className="space-y-8">
-          <Card pad={false}>
+          <Card id={`p-${featA.id}`} pad={false}>
             <FeaturedProject p={featA} t={t} lang={lang} />
           </Card>
-          <Card pad={false}>
+          <Card id={`p-${featB.id}`} pad={false}>
             <FeaturedProject p={featB} t={t} lang={lang} reverse />
           </Card>
           <div className="grid gap-8 md:grid-cols-2">
             {t.projects.more.map((p, i) => (
-              <Card key={p.id} delay={i * 0.15} pad={false}>
+              <Card key={p.id} id={`p-${p.id}`} delay={i * 0.15} pad={false}>
                 <SmallProject p={p} t={t} />
               </Card>
             ))}

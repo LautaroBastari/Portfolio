@@ -3,18 +3,18 @@
 @tailwind utilities;
 
 /*
- * Paleta: todo sale de estas variables (canales RGB).
- * Para cambiar el color de acento del sitio, tocar solo --accent.
+ * Estilo "diario": papel gris claro, tinta casi negra y grises.
+ * Todo sale de estas variables (canales RGB).
  */
 :root {
-  --bg: 10 10 11;
-  --surface: 19 19 21;
-  --surface-2: 30 30 33;
-  --line: 39 39 42;
-  --fg: 236 236 239;
-  --muted: 150 150 160;
-  --accent: 245 177 76;
-  color-scheme: dark;
+  --bg: 233 231 226; /* papel */
+  --surface: 241 240 236; /* papel más claro (tarjetas) */
+  --surface-2: 222 220 214;
+  --line: 176 172 165; /* filetes finos */
+  --fg: 24 24 23; /* tinta */
+  --muted: 88 86 82;
+  --accent: 24 24 23; /* sin color: el acento es la propia tinta */
+  color-scheme: light;
 }
 
 @layer base {
@@ -44,14 +44,21 @@
   }
   body {
     @apply bg-bg font-sans text-fg antialiased;
+    /* Grano de papel muy sutil */
+    background-image: radial-gradient(rgb(0 0 0 / 0.035) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
   }
   ::selection {
-    background: rgb(var(--accent) / 0.25);
+    background: rgb(var(--fg) / 0.15);
   }
   :focus-visible {
-    outline: 2px solid rgb(var(--accent));
+    outline: 2px solid rgb(var(--fg));
     outline-offset: 2px;
-    border-radius: 4px;
   }
 }
 
@@ -59,31 +66,34 @@
   .container-page {
     @apply mx-auto w-full max-w-6xl px-5 sm:px-8 2xl:max-w-7xl;
   }
+  /* Título de sección como cabecera de diario: versalitas entre filetes */
   .section-title {
-    @apply mb-12 flex items-center gap-4 text-sm font-medium uppercase tracking-[0.2em] text-muted;
-  }
-  .section-title::after {
-    content: "";
-    @apply h-px flex-1 bg-line;
+    @apply mb-10 border-y-[3px] border-double border-fg py-2 text-center font-display text-sm font-bold uppercase tracking-[0.35em] text-fg;
   }
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-lg bg-fg px-5 py-2.5 text-sm font-medium text-bg transition hover:bg-accent;
+    @apply inline-flex items-center gap-2 border border-fg bg-fg px-5 py-2.5 text-sm font-semibold text-bg transition-colors duration-300 hover:bg-transparent hover:text-fg;
   }
   .btn-secondary {
-    @apply inline-flex items-center gap-2 rounded-lg border border-line px-4 py-2.5 text-sm font-medium text-fg transition hover:border-accent hover:text-accent;
+    @apply inline-flex items-center gap-2 border border-fg/40 px-4 py-2.5 text-sm font-semibold text-fg transition-colors duration-300 hover:border-fg hover:bg-fg hover:text-bg;
   }
   .nav-link {
     @apply text-sm text-muted transition-colors hover:text-fg;
   }
   .icon-link {
-    @apply rounded-md p-2 text-muted transition-colors hover:text-accent;
+    @apply p-2 text-muted transition-colors hover:text-fg;
   }
-  /* Tarjeta de la grilla bento */
+  /* Tarjeta: recuadro de nota de diario */
   .bento {
-    @apply overflow-hidden rounded-3xl border border-line bg-surface transition-[border-color,transform] duration-500 ease-out hover:border-muted/40;
+    @apply overflow-hidden border border-fg/25 bg-surface/70 transition-[border-color,box-shadow] duration-500 ease-out hover:border-fg/60 hover:shadow-[4px_4px_0_0_rgb(var(--fg)/0.12)];
   }
   .card {
-    @apply rounded-xl border border-line bg-surface transition-colors hover:border-muted/50;
+    @apply border border-line bg-surface transition-colors hover:border-muted/50;
+  }
+  /* Imágenes en blanco y negro, como impresas; recuperan el color al pasar el mouse */
+  .ink {
+    @apply grayscale transition-[filter] duration-700 hover:grayscale-0;
+  }
+  .drop-cap::first-letter {
+    @apply float-left mr-2 mt-1 font-display text-6xl font-black leading-[0.8] text-fg;
   }
 }
-

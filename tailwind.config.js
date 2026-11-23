@@ -24,7 +24,9 @@ export default {
         "scroll-dot": "scroll-dot 2.2s ease-in-out infinite",
       },
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        // Texto de cuerpo: serif de lectura; títulos: serif de titular de diario
+        sans: ['"Source Serif 4"', ...defaultTheme.fontFamily.serif],
+        display: ['"Playfair Display"', ...defaultTheme.fontFamily.serif],
         mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
       },
     },

@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { content } from "./content";
 import Navbar from "./components/Navbar";
 import Bento from "./components/Bento";
-import { Footer, Hero } from "./components/Sections";
+import Portada from "./components/Portada";
+import { Footer } from "./components/Sections";
 
 function initialLang() {
   try {
@@ -34,7 +35,7 @@ export default function App() {
       </a>
       <Navbar t={t} lang={lang} setLang={setLang} />
       <div key={lang}>
-        <Hero t={t} />
+        <Portada t={t} lang={lang} />
         <Bento t={t} lang={lang} />
       </div>
       <Footer t={t} />

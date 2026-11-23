@@ -32,7 +32,11 @@ export function scrollToY(targetY) {
 export function scrollToId(id) {
   const el = document.getElementById(id);
   if (!el) return;
-  const y = id === "inicio" ? 0 : el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+  // offsetTop ignora los transform de las animaciones de entrada,
+  // así el destino es la posición final del elemento y no la de mitad de animación
+  let top = 0;
+  for (let n = el; n; n = n.offsetParent) top += n.offsetTop;
+  const y = id === "inicio" ? 0 : top - HEADER_OFFSET;
   scrollToY(Math.max(0, y));
 }
 

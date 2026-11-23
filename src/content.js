@@ -141,6 +141,23 @@ export const content = {
       copy: "Copiar mail",
       copied: "¡Copiado!",
     },
+    // Portada estilo diario
+    diario: {
+      edition: "Edición en español",
+      tagline: "Analista en Sistemas · Desarrollador Fullstack",
+      kicker: "Trabajo freelance · 2025 — 2026",
+      headline: "Desarrollé en Rust el sistema de gestión que un comercio de Palermo usa todos los días",
+      deck: "Soy Analista en Sistemas y estoy finalizando la Licenciatura en Sistemas en la UNNOBA. Como freelance, construí de punta a punta el software con el que el negocio maneja sus ventas, su stock y su caja.",
+      body: [
+        "Durante 2025 y 2026 trabajé como desarrollador freelance: diseñé y construí una aplicación de escritorio offline para un comercio minorista de Palermo, Buenos Aires, con ventas con pagos combinados, stock con historial de costos, apertura y cierre de caja, gastos, sueldos y reportes de rentabilidad.",
+        "Elegí Rust y Tauri en lugar de Electron para que el sistema corra liviano en las PCs del local, y SQLite con integridad referencial para que cada operación quede registrada. La lógica de negocio está cubierta por 66 tests que se ejecutan en cada push.",
+        "Me defino como Desarrollador Fullstack con foco en backend: además de Rust, trabajo con Java y Spring en arquitecturas de microservicios, y con React y TypeScript en el frontend.",
+      ],
+      caption: "Lautaro Bastari, desarrollador fullstack.",
+      projects: "Proyectos",
+      open: "Ver nota",
+      issue: "N.º",
+    },
     footer: "Hecho con React y Tailwind.",
   },
 
@@ -260,6 +277,23 @@ export const content = {
       text: "Have a project or an open position? Get in touch.",
       copy: "Copy email",
       copied: "Copied!",
+    },
+    // Newspaper-style front page
+    diario: {
+      edition: "English edition",
+      tagline: "Systems Analyst · Fullstack Developer",
+      kicker: "Freelance work · 2025 — 2026",
+      headline: "I built in Rust the management system a store in Palermo, Buenos Aires uses every day",
+      deck: "I'm a Systems Analyst finishing my B.S. in Information Systems at UNNOBA. As a freelancer, I built end to end the software the business uses to run its sales, stock and cash register.",
+      body: [
+        "During 2025 and 2026 I worked as a freelance developer: I designed and built an offline desktop application for a retail store in Palermo, Buenos Aires, with sales with split payments, stock with cost history, cash register opening and closing, expenses, salaries and profitability reports.",
+        "I chose Rust and Tauri over Electron so the system runs lightweight on the store's PCs, and SQLite with referential integrity so every operation is recorded. The business logic is covered by 66 tests that run on every push.",
+        "I see myself as a Fullstack Developer with a backend focus: besides Rust, I work with Java and Spring on microservice architectures, and with React and TypeScript on the frontend.",
+      ],
+      caption: "Lautaro Bastari, fullstack developer.",
+      projects: "Projects",
+      open: "Read more",
+      issue: "No.",
     },
     footer: "Built with React and Tailwind.",
   },
